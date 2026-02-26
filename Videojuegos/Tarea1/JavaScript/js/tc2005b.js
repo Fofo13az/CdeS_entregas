@@ -37,6 +37,15 @@ function bubbleSort(list){
 }
 
 function invertArray(array){
+    let newArray = [];
+    for (let i = array.length-1; i>=0; i--){
+        newArray.push(array[i]);
+    }
+
+    return newArray;
+}
+
+function invertArrayInplace(array){
     let i = 0;
     let j = array.length-1;
 
@@ -51,6 +60,8 @@ function invertArray(array){
 
     return array;
 }
+
+
 
 function capitalize(sentence){
     let string = "";
@@ -165,12 +176,13 @@ function findShortestString(list){
 
 function isPalindrome(sentence){
     let right_to_left = "";
+    
 
-    for (let i = sentence.length; i>0; i--){
+    for (let i = sentence.length-1; i>=0; i--){
         right_to_left += sentence[i];
     }
 
-    if (sentence == right_to_left){
+    if (sentence.toLowerCase() === right_to_left.toLowerCase()){
         return true;
     }
     else{
@@ -178,12 +190,32 @@ function isPalindrome(sentence){
     }
 }
 
+function sortStrings(list){
+    for (let i = 0; i<list.length; i++){
+            for (let j = 0; j<list.length-1; j++){
+                if (list[j].localeCompare(list[j + 1]) > 0){
+                    let temp = list[j];
+                    list[j] = list[j+1];
+                    list[j+1] = temp;
+                }
+                
+            }
+    }
+
+    return list;
+}
+
+function stats(nums){
+    let promedio_moda = [];
+    
+}
+
 
 export {
     firstNonRepeating,
     bubbleSort,
     invertArray,
-    /*invertArrayInplace,*/
+    invertArrayInplace,
     capitalize,
     mcd,
     hackerSpeak,
@@ -191,8 +223,8 @@ export {
     deduplicate,
     findShortestString,
     isPalindrome,
-    /*sortStrings,
-    stats,
+    sortStrings,
+    /*stats,
     popularString,
     isPowerOf2,
     sortDescending,*/
