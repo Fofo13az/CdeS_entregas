@@ -7,7 +7,7 @@
 "use strict";
 
 function firstNonRepeating(str){
-    /*
+
     const count = {};
 
     for (const char of str) {
@@ -15,17 +15,175 @@ function firstNonRepeating(str){
     }
 
     for (const char of str) {
-        if (count[char] === 1) return char;
-    }*/
+        if (count[char] === 1){ 
+            return char;
+        }
+    }
 
+}
+
+function bubbleSort(list){
+    for (let i = 0; i<list.length; i++){
+            for (let j = 0; j<list.length-1; j++){
+                if (list[j] > list[j+1]){
+                    let temp = list[j];
+                    list[j] = list[j+1];
+                    list[j+1] = temp;
+                }
+            }
+    }
+
+    return list;
+}
+
+function invertArray(array){
+    let i = 0;
+    let j = array.length-1;
+
+    while (i < j) {
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+
+        i+=1;
+        j-=1;
+    }
+
+    return array;
+}
+
+function capitalize(sentence){
+    let string = "";
+    let cap = true;
+
+    for (let char of sentence){
+        if (char === " "){
+            cap = true;
+            string += char;
+        }
+        else if (cap == true){
+            string += char.toUpperCase();
+            cap = false;
+        }
+        else{
+            string += char;
+        }
+    }
+
+    return string;
+}
+
+function mcd(num1, num2){
+    if (num1 > num2){
+        if (num1%num2 == 0){
+            return num2;
+        }
+        else{
+            return mcd(num2, num1%num2);
+        }
+    }
+    else{
+        if (num1 == 0){
+            return 0;
+        }
+        if (num2%num1 == 0){
+            return num1;
+        }
+        else{
+            return mcd(num1, num2%num1);
+        }
+    }
+}
+
+function hackerSpeak(sentence){
+    let hackspeak = "";
+    for (let char of sentence){
+        if (char.toLowerCase() === 'a'){
+            char = '4';
+            hackspeak += char;
+        }
+        else if (char.toLowerCase() === 's'){
+            char = '5';
+            hackspeak += char;
+        }
+        else if (char.toLowerCase() === 'e'){
+            char = '3';
+            hackspeak += char;
+        }
+        else if (char.toLowerCase() === 'o'){
+            char = '0';
+            hackspeak += char;
+        }
+        else if (char.toLowerCase() === 'i'){
+            char = '1';
+            hackspeak += char;
+        }
+        else{
+            hackspeak += char;
+        }
+    }
+
+    return hackspeak;
+}
+
+function factorize(num){
+    let factores = [];
+    for (let i = 1; i<=num; i++){
+        if (num%i === 0){
+            factores.push(i);
+        }
+    }
+    return factores;
+}
+
+function deduplicate(array){
+    let newList = [];
+    for (let i = 0; i<array.length; i++){
+        if (!newList.includes(array[i])){
+            newList.push(array[i]);
+        }
+    }
+
+    return newList;
+}
+
+function findShortestString(list){
+    if (list == ''){
+        return 0;
+    }
+
+    let shortest = list[0].length;
+
+    for (let i = 0; i<list.length; i++){
+        if (list[i].length < shortest){
+            shortest = list[i].length;
+        }
+    }
+
+    return shortest;
+}
+
+function isPalindrome(sentence){
+    let right_to_left = "";
+
+    for (let i = sentence.length; i>0; i--){
+        right_to_left += sentence[i];
+    }
+
+    if (sentence == right_to_left){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 
 export {
     firstNonRepeating,
-    /*bubbleSort,
+    bubbleSort,
     invertArray,
-    invertArrayInplace,
+    /*invertArrayInplace,*/
     capitalize,
     mcd,
     hackerSpeak,
@@ -33,7 +191,7 @@ export {
     deduplicate,
     findShortestString,
     isPalindrome,
-    sortStrings,
+    /*sortStrings,
     stats,
     popularString,
     isPowerOf2,
