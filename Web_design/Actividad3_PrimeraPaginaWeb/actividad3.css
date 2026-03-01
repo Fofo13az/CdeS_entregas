@@ -1,0 +1,68 @@
+body{
+    color: #cbac85;
+    background-color: #3e1e04;
+}
+
+.encabezado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #cbac85;
+    background-color: #965015;
+    font-size: x-large;
+}
+
+.intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+#titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+}
+
+#nombre{
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gatos{
+    font-size: large;
+    text-align: center;
+}
+
+.gatos img {
+  width: 600px;
+  height: 600px;
+  object-fit: scale-down;
+  display: block;
+  margin: 15px auto;
+  border-radius: 12px;
+}
+
+.menu{
+    background-color: 	#6a3005;
+    text-align: center;
+    font-size: large;
+}
+
+.equipo{
+    text-align: center;
+    font-size: large;
+}
+
+.equipo img {
+  width: 600px;
+  height: 600px;
+  object-fit: scale-down;
+  display: block;
+  margin: 15px auto;
+  border-radius: 12px;
+}
