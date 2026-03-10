@@ -2,6 +2,7 @@
  * Actividad en clase: Javascript
  * Adolfo Hernández Sánchez
  * A0182496
+ * https://github.com/Fofo13az/CdeS_entregas/commits/main/Videojuegos/Tareas/js
  */
 
 "use strict";
